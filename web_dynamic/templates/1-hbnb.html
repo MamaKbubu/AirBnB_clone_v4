@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?cache_id={{ chace_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?cache_id={{ chace_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?cache_id={{ chace_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?cache_id={{ chace_id }}">
-    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?cache_id={{ chace_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ chace_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ chace_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ chace_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ chace_id }}">
+    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ chace_id }}">
     <link rel="icon" href="../static/images/icon.png" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/1-hbnb.js?{{ cache_id }}"></script>
     <title>HBnB</title>
   </head>
   <body>
@@ -41,7 +42,11 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
+	      <li>
+			  <input style="margin-right: 10px;" type="checkbox" data-name="{{ amenity.name }}"
+			  data-id="{{ amenity.id }}">
+              {{ amenity.name }}
+          </li>
 	      {% endfor %}
 	    </ul>
 	  </div>
